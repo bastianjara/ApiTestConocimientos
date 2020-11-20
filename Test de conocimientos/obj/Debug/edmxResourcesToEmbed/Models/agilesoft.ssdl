@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="agilesoftModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="pa_iniciar_sesion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="username_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="password_usuario" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="pa_inserta_usuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="username_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="password_usuario" Type="varchar(max)" Mode="In" />
+    <Parameter Name="nombre_usuario" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="agilesoftModelStoreContainer" />
+</Schema>

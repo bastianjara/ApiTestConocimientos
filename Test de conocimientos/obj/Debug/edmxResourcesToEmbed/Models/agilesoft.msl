@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="agilesoftModelStoreContainer" CdmEntityContainer="agilesoftEntities">
+    <FunctionImportMapping FunctionImportName="pa_inserta_usuario" FunctionName="agilesoftModel.Store.pa_inserta_usuario" />
+    <FunctionImportMapping FunctionImportName="pa_iniciar_sesion" FunctionName="agilesoftModel.Store.pa_iniciar_sesion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="agilesoftModel.pa_iniciar_sesion_Result">
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="username_usuario" ColumnName="username_usuario" />
+          <ScalarProperty Name="password_usuario" ColumnName="password_usuario" />
+          <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

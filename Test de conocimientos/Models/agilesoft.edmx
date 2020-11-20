@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="agilesoftModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="pa_iniciar_sesion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="username_usuario" Type="varchar" Mode="In" />
+          <Parameter Name="password_usuario" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="pa_inserta_usuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="username_usuario" Type="varchar" Mode="In" />
+          <Parameter Name="password_usuario" Type="varchar(max)" Mode="In" />
+          <Parameter Name="nombre_usuario" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="agilesoftModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="agilesoftModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="agilesoftEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="pa_inserta_usuario" ReturnType="Collection(String)">
+            <Parameter Name="username_usuario" Mode="In" Type="String" />
+            <Parameter Name="password_usuario" Mode="In" Type="String" />
+            <Parameter Name="nombre_usuario" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pa_iniciar_sesion" ReturnType="Collection(agilesoftModel.pa_iniciar_sesion_Result)">
+            <Parameter Name="username_usuario" Mode="In" Type="String" />
+            <Parameter Name="password_usuario" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="pa_iniciar_sesion_Result">
+          <Property Type="Int32" Name="id_usuario" Nullable="false" />
+          <Property Type="String" Name="username_usuario" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="password_usuario" Nullable="true" />
+          <Property Type="String" Name="nombre_usuario" Nullable="true" MaxLength="200" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="agilesoftModelStoreContainer" CdmEntityContainer="agilesoftEntities" >
+          <FunctionImportMapping FunctionImportName="pa_inserta_usuario" FunctionName="agilesoftModel.Store.pa_inserta_usuario" />
+          <FunctionImportMapping FunctionImportName="pa_iniciar_sesion" FunctionName="agilesoftModel.Store.pa_iniciar_sesion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="agilesoftModel.pa_iniciar_sesion_Result">
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="username_usuario" ColumnName="username_usuario" />
+                <ScalarProperty Name="password_usuario" ColumnName="password_usuario" />
+                <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
