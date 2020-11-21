@@ -12,5 +12,17 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_lista_tareas" FunctionName="agilesoftModel.Store.sp_lista_tareas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="agilesoftModel.sp_lista_tareas_Result">
+          <ScalarProperty Name="id_tarea" ColumnName="id_tarea" />
+          <ScalarProperty Name="nombre_tarea" ColumnName="nombre_tarea" />
+          <ScalarProperty Name="estado_tarea" ColumnName="estado_tarea" />
+          <ScalarProperty Name="descripcion_tarea" ColumnName="descripcion_tarea" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_inserta_tarea" FunctionName="agilesoftModel.Store.sp_inserta_tarea" />
+    <FunctionImportMapping FunctionImportName="sp_actualiza_tarea" FunctionName="agilesoftModel.Store.sp_actualiza_tarea" />
   </EntityContainerMapping>
 </Mapping>

@@ -481,16 +481,98 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="T:Test_de_conocimientos.Clases.clsTarea">
+            <summary>
+            Clase global 
+            </summary>
+        </member>
+        <member name="P:Test_de_conocimientos.Clases.clsTarea.id_tarea">
+            <summary>
+            id de la tarea desde base de datos al momento de listar y actualizar
+            </summary>
+        </member>
+        <member name="T:Test_de_conocimientos.Clases.clsDatosTarea">
+            <summary>
+            Clase que hereda la global
+            </summary>
+        </member>
+        <member name="P:Test_de_conocimientos.Clases.clsDatosTarea.nombre_tarea">
+            <summary>
+            Nombre de la tarea requerido ya que no puede existir tarea sin nombre
+            </summary>
+        </member>
+        <member name="P:Test_de_conocimientos.Clases.clsDatosTarea.estado_tarea">
+            <summary>
+            Estado de la tarea (No Resuelto / Resuelto)
+            </summary>
+        </member>
+        <member name="P:Test_de_conocimientos.Clases.clsDatosTarea.descripcion_tarea">
+            <summary>
+            Descripcion es un campo requerido ya que nos indicara de que trata la tarea a mostrar y/o actualiza en la bd
+            </summary>
+            
+        </member>
         <member name="T:Test_de_conocimientos.Clases.clsDatosUsuario">
             <summary>
             Clase usuario
             </summary>
         </member>
+        <member name="P:Test_de_conocimientos.Clases.clsDatosUsuario.password_usuario_repita">
+            <summary>
+            Se agrega nuevo campo password para validacion de contraseñas y que estas sean iguales
+            </summary>
+        </member>
+        <member name="P:Test_de_conocimientos.Clases.clsDatosUsuario.nombre_usuario">
+            <summary>
+            Campo requerido para saber el nombre del usuario a agregado
+            </summary>
+        </member>
+        <member name="P:Test_de_conocimientos.Clases.clsUsuario.username_usuario">
+            <summary>
+            Campo requerido para poder validar registro en bd e iniciar sesion
+            </summary>
+        </member>
+        <member name="P:Test_de_conocimientos.Clases.clsUsuario.password_usuario">
+            <summary>
+            Campo para validacion de contraseña
+            </summary>
+        </member>
+        <member name="M:Test_de_conocimientos.Controllers.TareasController.ListaTareas">
+            <summary>
+            Metodo para listar las tareas existentes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Test_de_conocimientos.Controllers.TareasController.InsertaTarea(Test_de_conocimientos.Clases.clsDatosTarea)">
+            <summary>
+            Metodo para insertar una tarea nueva
+            </summary>
+            <param name="tarea"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Test_de_conocimientos.Controllers.TareasController.ActualizaTarea(Test_de_conocimientos.Clases.clsTarea)">
+            <summary>
+            Metodo para actualizar tarea y dejar en estado resuelto
+            </summary>
+            <param name="id_tarea"></param>
+            <returns></returns>
+        </member>
         <member name="M:Test_de_conocimientos.Controllers.UsuariosController.CrearUsuario(Test_de_conocimientos.Clases.clsDatosUsuario)">
             <summary>
             Metodo para insertar usuarios via post
             </summary>
-            <param name="usuario"></param>
+            <param name="usuario">
+            Metodo post la creacion de usuarios via post reicibiendo el username, passweord y nombre
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Test_de_conocimientos.Controllers.UsuariosController.IniciarSesion(Test_de_conocimientos.Clases.clsUsuario)">
+            <summary>
+            Metodo para inciar sesion 
+            </summary>
+            <param name="usuario">
+            Este metodo recibe como datos de entrada el username y la password para validar si este existe en la base de datos
+            </param>
             <returns></returns>
         </member>
     </members>

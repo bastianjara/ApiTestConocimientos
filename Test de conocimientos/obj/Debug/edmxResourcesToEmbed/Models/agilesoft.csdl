@@ -10,11 +10,26 @@
       <Parameter Name="username_usuario" Mode="In" Type="String" />
       <Parameter Name="password_usuario" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="sp_lista_tareas" ReturnType="Collection(agilesoftModel.sp_lista_tareas_Result)" />
+    <FunctionImport Name="sp_inserta_tarea" ReturnType="Collection(String)">
+      <Parameter Name="nombre_tarea" Mode="In" Type="String" />
+      <Parameter Name="estado_tarea" Mode="In" Type="String" />
+      <Parameter Name="descripcion_tarea" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_actualiza_tarea" ReturnType="Collection(String)">
+      <Parameter Name="id_tarea" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="pa_iniciar_sesion_Result">
     <Property Type="Int32" Name="id_usuario" Nullable="false" />
     <Property Type="String" Name="username_usuario" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="password_usuario" Nullable="true" />
     <Property Type="String" Name="nombre_usuario" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_lista_tareas_Result">
+    <Property Type="Int32" Name="id_tarea" Nullable="false" />
+    <Property Type="String" Name="nombre_tarea" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="estado_tarea" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="descripcion_tarea" Nullable="true" MaxLength="300" />
   </ComplexType>
 </Schema>

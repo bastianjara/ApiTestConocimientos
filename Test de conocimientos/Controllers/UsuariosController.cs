@@ -45,10 +45,10 @@ namespace Test_de_conocimientos.Controllers
             }
         }
         /// <summary>
-        /// 
+        /// Metodo para inciar sesion 
         /// </summary>
         /// <param name="usuario">
-        /// Este metodo recibe como datoa de entrada el username y la password para validar si este existe en la base de datos
+        /// Este metodo recibe como datos de entrada el username y la password para validar si este existe en la base de datos
         /// </param>
         /// <returns></returns>
         [Route("IniciarSesion")]
@@ -59,7 +59,7 @@ namespace Test_de_conocimientos.Controllers
                 if (usuario.username_usuario !="" && usuario.password_usuario!="")
                 {
                     var res = a.pa_iniciar_sesion(usuario.username_usuario, usuario.password_usuario).ToList();
-                    if (res.Count>0)
+                    if (res.Count()>0)
                     {
                         return Ok(res[0]);
                     }

@@ -9,5 +9,14 @@
     <Parameter Name="password_usuario" Type="varchar(max)" Mode="In" />
     <Parameter Name="nombre_usuario" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="sp_actualiza_tarea" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_tarea" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_inserta_tarea" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre_tarea" Type="varchar" Mode="In" />
+    <Parameter Name="estado_tarea" Type="varchar" Mode="In" />
+    <Parameter Name="descripcion_tarea" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_lista_tareas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="agilesoftModelStoreContainer" />
 </Schema>

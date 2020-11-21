@@ -161,8 +161,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Clases\clsTarea.cs" />
     <Compile Include="Clases\clsUsuario.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TareasController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -184,6 +186,9 @@
       <DependentUpon>agilesoft.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\pa_iniciar_sesion_Result.cs">
+      <DependentUpon>agilesoft.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_lista_tareas_Result.cs">
       <DependentUpon>agilesoft.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

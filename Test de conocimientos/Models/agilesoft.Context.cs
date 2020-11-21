@@ -58,5 +58,36 @@ namespace Test_de_conocimientos.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pa_iniciar_sesion_Result>("pa_iniciar_sesion", username_usuarioParameter, password_usuarioParameter);
         }
+    
+        public virtual ObjectResult<sp_lista_tareas_Result> sp_lista_tareas()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_lista_tareas_Result>("sp_lista_tareas");
+        }
+    
+        public virtual ObjectResult<string> sp_inserta_tarea(string nombre_tarea, string estado_tarea, string descripcion_tarea)
+        {
+            var nombre_tareaParameter = nombre_tarea != null ?
+                new ObjectParameter("nombre_tarea", nombre_tarea) :
+                new ObjectParameter("nombre_tarea", typeof(string));
+    
+            var estado_tareaParameter = estado_tarea != null ?
+                new ObjectParameter("estado_tarea", estado_tarea) :
+                new ObjectParameter("estado_tarea", typeof(string));
+    
+            var descripcion_tareaParameter = descripcion_tarea != null ?
+                new ObjectParameter("descripcion_tarea", descripcion_tarea) :
+                new ObjectParameter("descripcion_tarea", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("sp_inserta_tarea", nombre_tareaParameter, estado_tareaParameter, descripcion_tareaParameter);
+        }
+    
+        public virtual ObjectResult<string> sp_actualiza_tarea(Nullable<int> id_tarea)
+        {
+            var id_tareaParameter = id_tarea.HasValue ?
+                new ObjectParameter("id_tarea", id_tarea) :
+                new ObjectParameter("id_tarea", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("sp_actualiza_tarea", id_tareaParameter);
+        }
     }
 }
