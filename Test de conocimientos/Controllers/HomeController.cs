@@ -11,7 +11,7 @@ namespace Test_de_conocimientos.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
-
+            //nico gay
             return View();
         }
     }
